@@ -15,14 +15,13 @@ async function train() {
   dataset.ys = null;
   dataset.encodeLabels(5);
     
-  // In the space below create a neural network that can classify hand gestures
-  // corresponding to rock, paper, scissors, lizard, and spock. The first layer
+  // In the space below create a neural network that can classify 5 objects. The first layer
   // of your network should be a flatten layer that takes as input the output
   // from the pre-trained MobileNet model. Since we have 5 classes, your output
   // layer should have 5 units and a softmax activation function. You are free
   // to use as many hidden layers and neurons as you like.  
-  // Take a look at the Rock-Paper-Scissors example. We also suggest
-  // using ReLu activation functions where applicable.
+  // It is suggested to use ReLu activation functions where applicable.
+    
   model = tf.sequential({
     layers: [
         tf.layers.flatten({inputShape: mobilenet.outputs[0].shape.slice(1)}),
